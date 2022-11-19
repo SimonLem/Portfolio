@@ -20,14 +20,16 @@ function Home() {
 
   setTimeout(() => {
     setIsLoading(false);
-  }, 5000);
+  }, 8000);
 
   var onClickLetsGo = () => {
     setOpenWelcome(false);
-    animateCamera();
-    setTimeout(() => {
-      setUiLoaded(true);
-    }, 2000);
+    if (!uiLoaded) {
+      animateCamera();
+      setTimeout(() => {
+        setUiLoaded(true);
+      }, 2000);
+    }
   };
   var onClickBackStack = () => {
     setOpenStack(false);
@@ -66,12 +68,12 @@ function Home() {
     }
     if (e.target.name === "Stack") {
       setOpenStack(true);
-      setBlur("blur(10px) hue-rotate(20deg)");
+      setBlur("blur(10px) hue-rotate(10deg)");
       console.log(camera.current.rotation.x);
     }
     if (e.target.name === "SkiPicture") {
       setOpenSki(true);
-      transitionBlur();
+      setBlur("blur(10px) hue-rotate(10deg)");
     }
     if (e.target.name === "Studies") {
       setOpenStudies(true);
@@ -88,8 +90,8 @@ function Home() {
   }, [audioPlaying]);
 
   function animateCamera() {
-    var positionBefore = { x: -744.79, y: 900.27, z: 1985.70 };
-    var positionAfter = { x: -1142.83, y: 869.10, z: 1825.66 };
+    var positionBefore = { x: -744.79, y: 900.27, z: 1985.7 };
+    var positionAfter = { x: -1142.83, y: 869.1, z: 1825.66 };
     var rotationBefore = { x: -18.36, y: -16.55, z: -7.41 };
     var rotationAfter = { x: -18.97, y: -27.65, z: -11.06 };
     var iteration = 0;
@@ -114,18 +116,18 @@ function Home() {
   }
 
   function transitionBlur() {
-      var iterationSki = 0;
-      console.log(iterationSki)
-      var maxIterationSki = 100;
-      while (iterationSki != maxIterationSki) {
-        setTimeout(() => {
-          console.log(iterationSki / 10);
-          setBlur(
-            `blur(${iterationSki / 10}px) hue-rotate(${iterationSki / 5}deg)`
-          );
-        }, 10 * iterationSki);
-        iterationSki++;
-      }
+    var iterationSki = 0;
+    console.log(iterationSki);
+    var maxIterationSki = 100;
+    while (iterationSki != maxIterationSki) {
+      setTimeout(() => {
+        console.log(iterationSki / 10);
+        setBlur(
+          `blur(${iterationSki / 10}px) hue-rotate(${iterationSki / 5}deg)`
+        );
+      }, 10 * iterationSki);
+      iterationSki++;
+    }
   }
 
   return (
