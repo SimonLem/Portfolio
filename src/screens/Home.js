@@ -3,7 +3,7 @@ import Welcome from "../components/Welcome.js";
 import SecondWelcome from "../components/SecondWelcome.js";
 import Stack from "../components/Stack.js";
 import Ski from "../components/Ski.js";
-import Studies from "../components/Studies.js";
+import Contact from "../components/Contact.js";
 import Fade from "../components/Fade.js";
 import Spline from "@splinetool/react-spline";
 
@@ -13,9 +13,10 @@ function Home() {
   const [openWelcome, setOpenWelcome] = useState(true);
   const [openStack, setOpenStack] = useState(false);
   const [openSki, setOpenSki] = useState(false);
-  const [openStudies, setOpenStudies] = useState(false);
+  const [openContact, setOpenContact] = useState(false);
   const [blur, setBlur] = useState("blur(0px)");
   const [audioPlaying, setAudioPlaying] = useState(false);
+  const [cursor, setCursor] = useState("default");
   const audio = new Audio("../../SoulFood.mp3");
 
   setTimeout(() => {
@@ -24,13 +25,12 @@ function Home() {
 
   var onClickLetsGo = () => {
     setOpenWelcome(false);
-    if (!uiLoaded) {
-      animateCamera();
-      setTimeout(() => {
-        setUiLoaded(true);
-      }, 2000);
-    }
+    animateCamera();
+    setTimeout(() => {
+      setUiLoaded(true);
+    }, 2000);
   };
+
   var onClickBackStack = () => {
     setOpenStack(false);
     setTimeout(() => {
@@ -45,44 +45,67 @@ function Home() {
     }, 400);
   };
 
-  var onClickBackStudies = () => {
-    setOpenStudies(false);
+  var onClickBackContact = () => {
+    setOpenContact(false);
     setTimeout(() => {
       setBlur("blur(0px)");
     }, 400);
   };
 
   const camera = useRef();
+
   function onLoad(spline) {
     const obj = spline.findObjectByName("Camera");
-    // or
-    // const obj = spline.findObjectById('8E8C2DDD-18B6-4C54-861D-7ED2519DE20E');
-
-    // save it in a ref for later use
     camera.current = obj;
   }
 
   function onMouseDown(e) {
     if (e.target.name === "Welcome") {
       setOpenWelcome(true);
+      setUiLoaded(true);
     }
     if (e.target.name === "Stack") {
       setOpenStack(true);
-      setBlur("blur(10px) hue-rotate(10deg)");
-      console.log(camera.current.rotation.x);
+      setBlur("blur(10px) grayscale(30%)");
     }
     if (e.target.name === "SkiPicture") {
       setOpenSki(true);
-      setBlur("blur(10px) hue-rotate(10deg)");
+      setBlur("blur(10px) grayscale(30%)");
     }
-    if (e.target.name === "Studies") {
-      setOpenStudies(true);
-      setBlur("blur(10px)");
+    if (e.target.name === "Education") {
+      setOpenContact(true);
+      setBlur("blur(10px) grayscale(30%)");
     }
     if (e.target.name === "Guitar") {
       setAudioPlaying(true);
     }
+    if (e.target.name === "Pause") {
+      audio.pause();
+    }
   }
+
+  var timeout;
+
+  function onMouseHover(e) {
+    clearTimeout(timeout);
+    if (
+      e.target.name === "Welcome" ||
+      e.target.name === "Stack" ||
+      e.target.name === "SkiPicture" ||
+      e.target.name === "Education" ||
+      e.target.name === "Guitar" ||
+      e.target.name === "Controller" ||
+      e.target.name === "Moon" ||
+      e.target.name === "Pause" ||
+      e.target.name === "Interrupteur"
+    ) {
+      setCursor("pointer");
+    }
+    timeout = setTimeout(() => {
+      setCursor("default");
+    }, 200);
+  }
+
   useEffect(() => {
     {
       audioPlaying ? audio.play() : audio.pause();
@@ -96,6 +119,9 @@ function Home() {
     var rotationAfter = { x: -18.97, y: -27.65, z: -11.06 };
     var iteration = 0;
     var maxIteration = 200;
+    camera.current.position.x = -744.79;
+    camera.current.position.y = 900.27;
+    camera.current.position.z = 1985.7;
     while (iteration != maxIteration) {
       setTimeout(() => {
         camera.current.position.x -=
@@ -115,21 +141,6 @@ function Home() {
     }
   }
 
-  function transitionBlur() {
-    var iterationSki = 0;
-    console.log(iterationSki);
-    var maxIterationSki = 100;
-    while (iterationSki != maxIterationSki) {
-      setTimeout(() => {
-        console.log(iterationSki / 10);
-        setBlur(
-          `blur(${iterationSki / 10}px) hue-rotate(${iterationSki / 5}deg)`
-        );
-      }, 10 * iterationSki);
-      iterationSki++;
-    }
-  }
-
   return (
     <div>
       <Fade visible={openWelcome}>
@@ -145,15 +156,21 @@ function Home() {
       <Fade visible={openSki}>
         <Ski handleClickBackSki={onClickBackSki} />
       </Fade>
-      <Fade visible={openStudies}>
-        <Studies handleClickBackStudies={onClickBackStudies} />
+      <Fade visible={openContact}>
+        <Contact handleClickBackContact={onClickBackContact} />
       </Fade>
       <div className="model">
         <Spline
           scene="https://prod.spline.design/ixHkjouYxH99PgEh/scene.splinecode"
           onMouseDown={onMouseDown}
+          onMouseHover={onMouseHover}
           onLoad={onLoad}
-          style={{ filter: blur, position: "absolute" }}
+          style={{
+            filter: blur,
+            position: "absolute",
+            cursor: cursor,
+            pointerEvents: uiLoaded ? "" : "none",
+          }}
         />
       </div>
       <Fade visible={uiLoaded}>

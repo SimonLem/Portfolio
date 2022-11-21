@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 function Welcome(props) {
-  const [buttonIsVisible, setButtonIsVisible] = useState("0");
   const [isLoading, setIsLoading] = useState(true);
+
   setTimeout(() => {
     setIsLoading(false);
-    setButtonIsVisible("1");
   }, 1000);
 
   var clickLetsGo = () => {
@@ -33,30 +32,30 @@ function Welcome(props) {
       </p>
       <div className="centered">
         {isLoading ? (
-          <div className="centered" style={{flexDirection:"column", position: "absolute" }}> 
+          <div className="centered" style={{ flexDirection: "column" }}>
             <img
               src="../../loader.gif"
-              style={{ width: "10%", marginTop: "5%"}}
+              style={{ width: "10%"}}
             />
             <p
               className="text"
-              style={{fontSize: "calc(5px + 0.6vw)", marginTop: "-2%" }}
+              style={{ fontSize: "calc(5px + 0.6vw)", marginTop: "-2%" }}
             >
               Loading infinity and beyond ...
             </p>
           </div>
-        ) : null}
-        <div
-          className="button"
-          id="buttonWelcome"
-          style={{ opacity: buttonIsVisible }}
-          onClick={() => {
-            clickLetsGo();
-          }}
-        >
-          <div id="spin"></div>
-          <p>Explore</p>
-        </div>
+        ) : (
+          <div
+            className="button"
+            id="buttonWelcome"
+            onClick={() => {
+              clickLetsGo();
+            }}
+          >
+            <div id="spin"></div>
+            <p>Explore</p>
+          </div>
+        )}
       </div>
     </div>
   );

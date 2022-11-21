@@ -8,236 +8,135 @@ function Ski(props) {
   };
 
   return (
-    <div className="modalContainer">
-      <div className="modalContent">
+    <div className="modal">
+      <div
+        style={{
+          display: "flex",
+          marginTop: "2%",
+        }}
+      >
+        <img
+          src="../../Ski.jpg"
+          style={{
+            marginLeft: "2%",
+            minWidth: "30vw",
+            minHeight: "90vh",
+            maxHeight: "90vh",
+            objectFit: "cover",
+          }}
+        />
         <div
           style={{
             display: "flex",
-            height: "100%",
-            width: "100%",
+            justifyContent: "space-between",
+            flexDirection: "column",
+            marginLeft: "5%",
           }}
         >
-          <img
-            src="../../Ski.jpg"
-            style={{ width: "40%", objectFit: "cover"}}
-          />
-          <img src="../../arrowItsMe.png" style={{position:'absolute', width:"12vw", marginLeft:"19%",  transform:"rotate(18deg)"}} />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "50%",
-              marginTop: "2%",
-              marginLeft: "5%",
-            }}
-          >
-            <p className="text">It's me !</p>
+          <div>
             <p
               className="text"
               style={{
-                fontSize: "calc(10px + 1vw)",
-                marginBottom: "5%",
-                marginTop: "5%",
+                fontSize: "calc(20px + 2vw + 2vh)",
+                marginTop:"5%"
               }}
             >
-              I'm 25 years old and I live in Paris. In addition to computer science
-              and developing, I enjoy :
+              It's me !
             </p>
+            <p
+              className="text"
+              style={{
+                fontSize: "calc(10px + 0.7vw)",
+                marginTop:"2%"
+              }}
+            >
+              I'm 25 years old and I live in Paris. In addition to computer
+              science and developing, I enjoy :
+            </p>
+          </div>
+          <div >
             <div className="wrapper">
-              <p
-                className="text"
-                style={{
-                  fontSize: "calc(10px + 1vw)",
-                }}
-              >
-                - Mountains sports :
-              </p>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding:"5%"
-                }}
-              >
-                <img src="../../passionsIcons/iconSki.png" height={"50vh"} />
-                <p
-                  className="text"
-                  style={{
-                    marginLeft: "10%",
-                    fontSize: "calc(10px + 1vw)",
-                  }}
-                >
-                  skiing
-                </p>
+              <p className="text textSkiTitle">- Mountains sports :</p>
+              <div className="skiCard">
+                <img
+                  src="../../passionsIcons/iconSki.png"
+                  className="skiIcon"
+                />
+                <p className="text textSki">skiing</p>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding:"5%"
-                }}
-              >
+              <div className="skiCard">
                 <img
                   src="../../passionsIcons/iconClimbing.png"
-                  height={"50vh"}
+                  className="skiIcon"
                 />
-                <p
-                  className="text"
-                  style={{
-                    marginLeft: "10%",
-                    fontSize: "calc(10px + 1vw)",
-                  }}
-                >
-                  climbing
-                </p>
+                <p className="text textSki">climbing</p>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding:"5%"
-                }}
-              >
-                <img src="../../passionsIcons/iconTrekking.png" height={"50vh"} />
-                <p
-                  className="text"
-                  style={{
-                    marginLeft: "10%",
-                    fontSize: "calc(10px + 1vw)",
-                  }}
-                >
-                  trekking
-                </p>
+              <div className="skiCard">
+                <img
+                  src="../../passionsIcons/iconTrekking.png"
+                  className="skiIcon"
+                />
+                <p className="text textSki">trekking</p>
               </div>
             </div>
             <div className="wrapper">
-              <p
-                className="text"
-                style={{
-                  marginRight: "3%",
-                  fontSize: "calc(10px + 1vw)",
-                }}
-              >
-                - Playing music :
-              </p>{" "}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding:"5%"
-                }}
-              >
-                <img src="../../passionsIcons/iconGuitar.png" height={"50vh"} />
-                <p
-                  className="text"
-                  style={{
-                    marginLeft: "15%",
-                    fontSize: "calc(10px + 1vw)",
-                  }}
-                >
-                  guitar
-                </p>
+              <p className="text textSkiTitle">- Playing music :</p>
+              <div className="skiCard">
+                <img
+                  src="../../passionsIcons/iconGuitar.png"
+                  className="skiIcon"
+                />
+                <p className="text textSki">guitar</p>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding:"5%"
-                }}
-              >
-                <img src="../../passionsIcons/iconMic.png" height={"45vh"} />
-                <p
-                  className="text"
-                  style={{
-                    marginLeft: "15%",
-                    fontSize: "calc(10px + 1vw)",
-                  }}
-                >
-                  vocals
-                </p>
+              <div className="skiCard">
+                <img
+                  src="../../passionsIcons/iconMic.png"
+                  className="skiIcon"
+                />
+                <p className="text textSki">vocals</p>
               </div>
-            </div> <div className="wrapper">
-              <p
-                className="text"
-                style={{
-                  marginRight: "3%",
-                  fontSize: "calc(10px + 1vw)",
-                }}
-              >
-                - And more ... 
-              </p>{" "}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding:"5%"
-                }}
-              >
-                <img src="../../passionsIcons/iconVideoGame.png" height={"50vh"} />
-                <p
-                  className="text"
-                  style={{
-                    marginLeft: "15%",
-                    fontSize: "calc(10px + 1vw)",
-                  }}
-                >
-                 videogames
-                </p>
+            </div>
+            <div className="wrapper">
+              <p className="text textSkiTitle">- And more ...</p>
+              <div className="skiCard">
+                <img
+                  src="../../passionsIcons/iconVideoGame.png"
+                  className="skiIcon"
+                />
+                <p className="text textSki">videogames</p>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding:"5%"
-                }}
-              >
-                <img src="../../passionsIcons/iconBook.png" height={"45vh"} />
-                <p
-                  className="text"
-                  style={{
-                    marginLeft: "15%",
-                    fontSize: "calc(10px + 1vw)",
-                  }}
-                >
-                  books
-                </p>
+              <div className="skiCard">
+                <img
+                  src="../../passionsIcons/iconBook.png"
+                  className="skiIcon"
+                />
+                <p className="text textSki">books</p>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding:"5%"
-                }}
-              >
-                <img src="../../passionsIcons/iconMovie.png" height={"45vh"} />
-                <p
-                  className="text"
-                  style={{
-                    marginLeft: "15%",
-                    fontSize: "calc(10px + 1vw)",
-                  }}
-                >
-                  movies
-                </p>
+              <div className="skiCard">
+                <img
+                  src="../../passionsIcons/iconMovie.png"
+                  className="skiIcon"
+                />
+                <p className="text textSki">movies</p>
               </div>
             </div>
           </div>
-        </div>
-        <div style={{ marginTop: "3%" }}>
-          <div
-            className="button"
-            id="buttonWelcome"
-            style={{ opacity: buttonIsVisible }}
-            onClick={() => {
-              clickBackSki();
-              setButtonIsVisible("0");
-              setTimeout(() => {
-                setButtonIsVisible("1");
-              }, 800);
-            }}
-          >
-            <div id="spin"></div>
-            <p>Back</p>
+          <div className="centered">
+            <div
+              className="button"
+              id="buttonWelcome"
+              style={{ opacity: buttonIsVisible, marginTop: "0",marginLeft:"-15%" }}
+              onClick={() => {
+                clickBackSki();
+                setButtonIsVisible("0");
+                setTimeout(() => {
+                  setButtonIsVisible("1");
+                }, 800);
+              }}
+            >
+              <div id="spin"></div>
+              <p>Back</p>
+            </div>
           </div>
         </div>
       </div>
