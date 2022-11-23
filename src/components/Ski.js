@@ -38,7 +38,8 @@ function Ski(props) {
               className="text"
               style={{
                 fontSize: "calc(20px + 2vw + 2vh)",
-                marginTop:"5%"
+                marginTop:"5%",
+                fontWeight: "bold"
               }}
             >
               It's me !

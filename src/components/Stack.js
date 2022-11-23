@@ -12,73 +12,65 @@ function Stack(props) {
         className="text"
         style={{
           marginTop: "2%",
-          marginBottom:"2%"
+          marginBottom:"2%",
+          fontWeight: "bold",
+          fontSize:"calc(10px + 2vw + 2vh)"
         }}
       >
         My stack :
       </p>
       <div className="centered wrapper">
-        <img src="../../JS.png" style={{ width: "calc(50px + 2vh + 2vw)" }} />
+        <img src="../../JS.png" className="stackIcon" style={{marginLeft:"0"}}/>
         <p
-          className="text"
-          style={{ fontSize: "calc(15px + 1vw)", marginLeft: "4%" }}
+          className="text textStack"
         >
           Javascript{" "}
         </p>{" "}
         <img
-          src="../../HTML.png"
-          style={{ marginLeft: "4%", width: "calc(50px + 2vh + 2vw)" }}
+          src="../../HTML.png" className="stackIcon"
         />
         <p
-          className="text"
-          style={{ fontSize: "calc(15px + 1vw)", marginLeft: "4%" }}
+          className="text textStack"
         >
           HTML{" "}
         </p>{" "}
         <img
-          src="../../CSS.png"
-          style={{ marginLeft: "4%", width: "calc(50px + 2vh + 2vw)" }}
+          src="../../CSS.png"  className="stackIcon"
         />
         <p
-          className="text"
-          style={{ fontSize: "calc(15px + 1vw)", marginLeft: "4%" }}
+          className="text  textStack"
         >
           CSS{" "}
         </p>{" "}
       </div>
       <div className="centered wrapper">
         <img
-          src="../../logoReact.png"
-          style={{ width: "calc(50px + 2vh + 2vw)" }}
+          src="../../logoReact.png" className="stackIcon" style={{marginLeft:"0"}}
         />
         <p
-          className="text"
-          style={{ fontSize: "calc(15px + 1vw)", marginLeft: "5%" }}
+          className="text  textStack"
         >
           React/React Native :{" "}
         </p>{" "}
         <p
-          className="text"
-          style={{ fontSize: "calc(6px + 0.8vw)", marginLeft: "2%" }}
+          className="text textStack"
+          style={{ fontSize: "calc(6px + 0.8vw)"}}
         >
           Router DOM, Redux, Bootstrap, Spline{" "}
         </p>{" "}
       </div>
       <div className="centered wrapper">
-        <img src="../../NODE.png" style={{ width: "calc(50px + 2vh + 2vw)" }} />
+        <img src="../../NODE.png" className="stackIcon" style={{marginLeft:"0"}}/>
         <p
-          className="text"
-          style={{ fontSize: "calc(15px + 1vw)", marginLeft: "3%" }}
+          className="text textStack"
         >
           NodeJS/Express{" "}
         </p>{" "}
         <img
-          src="../../MONGODB.png"
-          style={{ marginLeft: "4%", width: "calc(50px + 2vh + 2vw)" }}
+          src="../../MONGODB.png"  className="stackIcon"
         />
         <p
-          className="text"
-          style={{ fontSize: "calc(15px + 1vw)", marginLeft: "3%" }}
+          className="text  textStack"
         >
           MongoDB{" "}
         </p>{" "}

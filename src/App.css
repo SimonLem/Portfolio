@@ -125,6 +125,70 @@
   align-items: center;
   padding: 3%;
 }
+.textStack {
+  font-size: calc(15px + 1vw);
+  margin-left: 4%;
+}
+.stackIcon {
+  width: calc(50px + 2vh + 2vw);
+  margin-left: 4%;
+}
+.contactIcon {
+  margin-left: 6vw;
+  margin-right: 10%;
+  width: calc(20px + 2vh + 2vw);
+}
+.containerImg {
+  filter: grayscale(0) brightness(85%);
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  border-radius: 50%;
+  margin-left: 3%;
+  cursor: pointer;
+  transition: all 0.45s ease-Out;
+}
+.containerImg:hover {
+  width: 52%;
+  filter: grayscale(30%) brightness(95%);
+}
+
+.portfolioImg {
+  width: 100%;
+  margin-left: 3%;
+  border-radius: 20px;
+}
+.arrow {
+  height: 100%;
+  cursor: pointer;
+  transition: height 0.3s ease-Out;
+}
+.arrow:hover {
+  height: 120%;
+}
+.siteCabinet {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.slider1 {
+  display: flex;
+  width: 200vw;
+  height: 100%;
+  margin-left: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+.slider2 {
+  overflow: hidden;
+  display: flex;
+  width: 200vw;
+  margin-left: -100%;
+  height: 50%;
+  transition: margin-left 0.3s ease-Out;
+}
 
 .button {
   display: inline-flex;

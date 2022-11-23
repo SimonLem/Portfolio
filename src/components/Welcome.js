@@ -5,7 +5,7 @@ function Welcome(props) {
 
   setTimeout(() => {
     setIsLoading(false);
-  }, 1000);
+  }, 5000);
 
   var clickLetsGo = () => {
     props.handleClickLetsGo();
@@ -28,7 +28,7 @@ function Welcome(props) {
       <p className="textWelcome" style={{ marginTop: "-1%" }}>
         I'm a junior web developer based in Paris
         <br />
-        and this is my website.
+        and this is my portfolio.
       </p>
       <div className="centered">
         {isLoading ? (
