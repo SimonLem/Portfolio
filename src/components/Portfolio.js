@@ -64,6 +64,7 @@ function Portfolio(props) {
               />
             </a>
           </div>{" "}
+        </div>
       </div>
       <div
         style={{
